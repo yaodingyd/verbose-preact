@@ -27,3 +27,26 @@ Here I also put a great chart by the first article:
 ![diff process](https://cdn-images-1.medium.com/max/2000/1*H4ysOfvyT5BMKABhbyslwA.png)
 
 
+
+### idiff process
+
+Step 1: diff node itself
+
+if vnode if text node
+- if dom is a text node already, update value
+- if dom is not a text node, replace it with new created text node
+if vode is a component
+- do component diff
+3. if vnode is element node
+- if not the same type, create new node and append old node's child into new node 
+
+
+Step 2: diff node's children node
+
+Step 3: diff node attribute
+- call ref 
+
+
+
+
+
