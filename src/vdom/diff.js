@@ -36,7 +36,10 @@ export function flushMounts() {
  */
 
 // mountAll means it's a DOM render
-// componentRoot means this diff is fired by a component, component is the direct own of dom
+// componentRoot means this diff is fired by a component, component is the direct owner of dom
+// componentRoot also means that vnode is the child of a component, 
+// where dom._component indicates that if dom is the child of a component
+// so (!componentRoot && dom._component) or (componentRoot && !dom._component) definitely means its mount/unmount, not prop update
 export function diff(dom, vnode, context, mountAll, parent, componentRoot) {
 	// diffLevel having been 0 here indicates initial entry into the diff (not a subdiff)
 	if (!diffLevel++) {
