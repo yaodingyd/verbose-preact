@@ -34,6 +34,9 @@ export function flushMounts() {
  *	@returns {Element} dom			The created/mutated element
  *	@private
  */
+
+// mountAll means it's a DOM render
+// componentRoot means the component being diffed is the direct owner of this DOM, not a parent compoent
 export function diff(dom, vnode, context, mountAll, parent, componentRoot) {
 	// diffLevel having been 0 here indicates initial entry into the diff (not a subdiff)
 	if (!diffLevel++) {
