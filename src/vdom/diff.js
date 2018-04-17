@@ -256,6 +256,9 @@ function diffChildren(dom, vchildren, context, mountAll, isHydrating) {
 				if (oldChild == null) {
 					dom.appendChild(child);
 				}
+				// this seems to be a overs-implification
+				// if multiple nodes to be removed, then it could be child === oldChild.nextSibling....nextSibling.nextSibling
+				// see https://github.com/developit/preact/issues/1052#issuecomment-379312598
 				else if (child === oldChild.nextSibling) {
 					removeNode(oldChil);
 				}

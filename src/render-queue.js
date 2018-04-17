@@ -6,6 +6,8 @@ import { renderComponent } from './vdom/component';
 
 let items = [];
 
+// preact manually makes sure that render queue only has one pending render so not to starve event loop
+// with microtasks
 export function enqueueRender(component) {
 	if (!component._dirty && (component._dirty = true) && items.push(component)==1) {
 		(options.debounceRendering || defer)(rerender);

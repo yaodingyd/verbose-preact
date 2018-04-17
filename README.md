@@ -40,12 +40,14 @@ if vode is a component
 3. if vnode is element node
 - if not the same type, create new node and append old node's child into new node 
 
-
 Step 2: diff node's children node
 
 Step 3: diff node attribute
 - call ref 
 
+
+### Preact's catch
+1. Preact uses DOM node to diff with vnode. So imperatively mutating DOM would still result in a diffing process, as DOM nodes are all reference. While in React and other React-like library, this won't happen because diffing is only done between vnodes, and  imperatively mutating DOM doesn't update vnodes(elements).
 
 
 
